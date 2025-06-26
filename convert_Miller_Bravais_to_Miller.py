@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Jun 26 12:04:48 2025
-
-@author: Amit Singh
+@author: Amit, The University of Alabama, USA
 """
 #%% Section-0: Importing Python Libraies
 import numpy as np
