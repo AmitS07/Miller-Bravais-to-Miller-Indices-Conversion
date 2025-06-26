@@ -1,0 +1,1 @@
+Hexagonal_Crsytallographic-Indices-Conversion is routine written in Python to convert 4-indices (Miller-Bravais) plane and direction of HCP crystals to 3-indices (Miller) planes and direction. This conversion does account for orthonormality of bases axes as well as latiice parameters of HCP crystal .
