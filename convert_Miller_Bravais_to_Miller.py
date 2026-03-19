@@ -65,7 +65,7 @@ def cartesian_crystal_lattice(a,b,c,alpha,beta,gamma):
     ##
     l11, l12, l13 = a, b*np.cos(gamma), c*np.cos(beta) #  cosine of [100] to a, b, c axis of crystal, a|| [100]
     l21, l22, l23 = 0, b*np.sin(gamma), c*(np.cos(alpha)-np.cos(beta)*np.cos(gamma))/(np.sin(gamma)) # cosine of lattice a,b,c along crystal [010] axis
-    l31, l32, l33 = 0, 0, c*np.sqrt(1+2*(np.cos(alpha)*np.cos(beta)*np.cos(gamma))-((np.cos(alpha)**2)+(np.cos(alpha)**2)+(np.cos(alpha)**2)))/(np.sin(gamma))
+    l31, l32, l33 = 0, 0, c*np.sqrt(1+2*(np.cos(alpha)*np.cos(beta)*np.cos(gamma))-((np.cos(alpha)**2)+(np.cos(beta)**2)+(np.cos(gamma)**2)))/(np.sin(gamma))
     crystal_lattice = np.array([[l11, l12, l13],
                                [l21, l22, l23],
                                [l31, l32, l33]])
@@ -91,11 +91,12 @@ c_a_dir_miller = [miller_bravais_to_miller_direction(ii) for ii in c_a_direction
 
 #%% Section-3: Making lattice orthonormal i.e. cartesian space ---------------------------------------------------------------
 covera = 1.587 # for Titanium
+a = 2.95 # in Angstroms, for Ti
 ## 3.1 For Direction 
 # Defining Crsyatl-lattice matrix for HCP crystal, ref: Introduction to Texture analysis by Olaf Engler, Stefan Zaefferer and Valerie Randle
-L_hcp = np.array([[1,-1/2,0],
-		  [0,np.sqrt(3)/2,0],
-		  [0,0,covera]])
+L_hcp = a*np.array([[1,-1/2,0],
+			  [0,np.sqrt(3)/2,0],
+			  [0,0,covera]])
 ## Note this L_HCP (Crystal-Lattice Matrix) can also be obtain by-
 # L_HCP = cartesian_crystal_lattice(a,b,c,alpha,beta,gamma) # by defining hcP Lattice parameters
 
